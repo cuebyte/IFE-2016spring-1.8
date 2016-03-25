@@ -1,0 +1,33 @@
+*
+  margin: 0
+  padding: 0
+
+screen-xs-max = 544px
+screen-sm-min = 544px
+screen-md-min = 768px
+screen-lg-min = 992px
+screen-xl-min = 1200px
+
+generateGrid(type)
+  for i in 1..12
+    .col-{type}-{i}
+      width: (100% / 12 * i)
+
+@media screen and (max-width: screen-md-min)
+  generateGrid("sm")
+@media screen and (min-width: screen-md-min)
+  generateGrid("md")
+
+.container
+  margin: 0 auto
+  width: 95%
+
+.box
+  float: left
+  box-sizing: border-box
+  padding: 10px
+
+.draw
+  height: 50px
+  background: #eee
+  border: 1px solid #999
